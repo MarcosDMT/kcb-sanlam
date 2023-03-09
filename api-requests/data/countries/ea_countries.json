@@ -1,0 +1,44 @@
+[
+  {
+  "name": "Burundi",
+  "dialCode": "+257",
+  "isoCode": "BI",
+  "flag": "https://cdn.kcak11.com/CountryFlags/countries/bi.svg"
+  },
+  {
+    "name": "Congo",
+    "dialCode": "+242",
+    "isoCode": "CG",
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/cg.svg"
+  },
+  {
+    "name": "Kenya",
+    "dialCode": "+254",
+    "isoCode": "KE",
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/ke.svg"
+  },
+  {
+    "name": "Rwanda",
+    "dialCode": "+250",
+    "isoCode": "RW",
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/rw.svg"
+  },
+  {
+    "name": "Tanzania, United Republic of Tanzania",
+    "dialCode": "+255",
+    "isoCode": "TZ",
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/tz.svg"
+  },
+  {
+    "name": "South Sudan",
+    "dialCode": "+211",
+    "isoCode": "SS",
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/ss.svg"
+  },
+  {
+    "name": "Uganda",
+    "dialCode": "+256",
+    "isoCode": "UG",
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/ug.svg"
+  }
+]

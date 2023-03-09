@@ -1,0 +1,51 @@
+{
+  "name": "sanlam-insurance",
+  "version": "0.1.0",
+  "private": true,
+  "author": "dynamic-mobility-technology",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next build && next export",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.10.3",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.6",
+    "@mui/lab": "^5.0.0-alpha.104",
+    "@mui/material": "^5.10.6",
+    "@mui/styles": "^5.10.6",
+    "@mui/x-date-pickers": "^5.0.3",
+    "@reduxjs/toolkit": "^1.8.5",
+    "axios": "^1.1.2",
+    "chroma-js": "^2.4.2",
+    "date-fns": "^2.29.3",
+    "flatpickr": "^4.6.13",
+    "formik": "^2.2.9",
+    "moment": "^2.29.4",
+    "next": "12.3.1",
+    "next-optimized-images": "^2.6.2",
+    "prop-types": "^15.8.1",
+    "react": "18.2.0",
+    "react-currency-format": "^1.1.0",
+    "react-dom": "18.2.0",
+    "react-flatpickr": "^3.10.13",
+    "react-floating-whatsapp": "^5.0.6",
+    "react-hot-toast": "^2.4.0",
+    "react-icons": "^4.4.0",
+    "react-lottie": "^1.2.3",
+    "react-redux": "^8.0.2",
+    "react-reveal": "^1.2.2",
+    "react-signature-canvas": "^1.0.6",
+    "sharp": "^0.31.1",
+    "simple-crypto-js": "^3.0.1",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "eslint": "8.23.1",
+    "eslint-config-next": "12.3.1"
+  }
+}
