@@ -161,15 +161,26 @@ const SanlamEducareSection = () => {
 
                                 {activeSection.section === 'paymentInfo' &&
                                     (
-                                        <PaymentDetailsSection {...{
+                                        // <PaymentDetailsSection {...{
+                                        //     handleOnPaymentSave,
+                                        //     responsesDetails,
+                                        //     handleOnReferralSave,
+                                        //     resetValues: resetData,
+                                        //     product: "EduCare",
+                                        //     maxPremium: 20000,
+                                        //     minPremium: 0,
+                                        //     productId: 2,
+                                        // }}/>
+                                        <PaymentSection {...{
                                             handleOnPaymentSave,
                                             responsesDetails,
                                             handleOnReferralSave,
-                                            resetValues: resetData,
-                                            product: "EduCare",
-                                            maxPremium: 20000,
-                                            minPremium: 0,
-                                            productId: 2,
+                                            resetValues:resetData,
+                                            // minPremium: 20000,
+                                            product: "FlexiEducator Plus",
+                                            productId: 'flexeducatorplus',
+                                            maxPremium: 20000000,
+                                            minPremium: 300000,
                                         }}/>
                                     )}
                             </MKBox>

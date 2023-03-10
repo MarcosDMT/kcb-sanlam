@@ -79,55 +79,55 @@ export const getQuestions = () => async dispatch => {
 }
 
 export const saveDetails = (section, customerId, productId, details, index=0) => async dispatch => {
-    if (details.personalDetails?.email){
-        const productName = 'endowment';
-        if (section === 'personalDetails'){
-            const values = {...details.personalDetails}
-            const data = await commonApis.updateBioDataDetails(customerId, values);
-            //update the biodata details
-            if (data?.id){
-                dispatch(setCustomerId(data.id));
-                if (!productId){
-                    const product = await commonApis.createEducarePlusProduct(data.id, productName);
-                    if (product?.id){
-                        dispatch(setProductId(product.id));
-                    }
-                }
-                details.personalDetails = {...data}
-            }
-        }
-        if (section === 'healthInfo'){
-            const values = {...details.healthInfo}
-            const data = await commonApis.updateHealthQuestions(customerId, productId, values);
-            //update the health details
-            if (data?.id){
-                details.healthInfo = {...data}
-            }
-        }
-        if (section === 'beneficiaryInfo'){
-            const values = {...details.beneficiaryInfo[index]}
-            const data = await commonApis.updateBeneficiary(customerId, productId, values);
-            if (data?.beneficiary.id){
-                details.beneficiaryInfo[index] = {...data.beneficiary,
-                    dob: data.beneficiary.date_of_birth,
-                    guardian: {...data.guardian}}
-            }
-        }
-        if (section === 'paymentInfo'){
-            const values = {...details.paymentInfo}
-            const data = await commonApis.updatePaymentDetails(customerId, productId, values);
-            if (data?.id){
-                details.paymentInfo = {...data}
-            }
-        }
-        if (section === 'referralInfo'){
-            const values = {...details.referralInfo}
-            const data = await commonApis.updateReferralDetails(customerId, productId, values);
-            if (data){
-                details.referralInfo = {...data}
-            }
-        }
-    }
+    // if (details.personalDetails?.email){
+    //     const productName = 'endowment';
+    //     if (section === 'personalDetails'){
+    //         const values = {...details.personalDetails}
+    //         const data = await commonApis.updateBioDataDetails(customerId, values);
+    //         //update the biodata details
+    //         if (data?.id){
+    //             dispatch(setCustomerId(data.id));
+    //             if (!productId){
+    //                 const product = await commonApis.createEducarePlusProduct(data.id, productName);
+    //                 if (product?.id){
+    //                     dispatch(setProductId(product.id));
+    //                 }
+    //             }
+    //             details.personalDetails = {...data}
+    //         }
+    //     }
+    //     if (section === 'healthInfo'){
+    //         const values = {...details.healthInfo}
+    //         const data = await commonApis.updateHealthQuestions(customerId, productId, values);
+    //         //update the health details
+    //         if (data?.id){
+    //             details.healthInfo = {...data}
+    //         }
+    //     }
+    //     if (section === 'beneficiaryInfo'){
+    //         const values = {...details.beneficiaryInfo[index]}
+    //         const data = await commonApis.updateBeneficiary(customerId, productId, values);
+    //         if (data?.beneficiary.id){
+    //             details.beneficiaryInfo[index] = {...data.beneficiary,
+    //                 dob: data.beneficiary.date_of_birth,
+    //                 guardian: {...data.guardian}}
+    //         }
+    //     }
+    //     if (section === 'paymentInfo'){
+    //         const values = {...details.paymentInfo}
+    //         const data = await commonApis.updatePaymentDetails(customerId, productId, values);
+    //         if (data?.id){
+    //             details.paymentInfo = {...data}
+    //         }
+    //     }
+    //     if (section === 'referralInfo'){
+    //         const values = {...details.referralInfo}
+    //         const data = await commonApis.updateReferralDetails(customerId, productId, values);
+    //         if (data){
+    //             details.referralInfo = {...data}
+    //         }
+    //     }
+    // }
     dispatch(addResponseDetails(details));
 }
 export const resetData = () => async dispatch => {

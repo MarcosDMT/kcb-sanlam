@@ -20,7 +20,7 @@ const CommissionSection = props => {
                 { product === 'EduCare' ? (
                     <>
                         <MKTypography variant={'h6'} sx={{fontSize: '14px'}} color={'dark'}>
-                            {'NOTE: Standard Chartered Bancassurance Intermediary Ltd earns commissions on the premiums paid ' +
+                            {'NOTE: Kenya Commercial Bank Bancassurance Intermediary Ltd earns commissions on the premiums paid ' +
                                 'for this insurance product, as indicated below.'}<br/>
                             <TableContainer sx={{width: {md: '50%', xs: '100%'}}}>
                                 <Table sx={{
@@ -67,7 +67,7 @@ const CommissionSection = props => {
                 ): (
                     <>
                         <MKTypography variant={'h6'} color={'dark'}>
-                            {'NOTE: Standard Chartered Bancassurance Intermediary Ltd earns on the premiums paid for this insurance' +
+                            {'NOTE: Kenya Commercial Bank Bancassurance Intermediary Ltd earns on the premiums paid for this insurance' +
                                 ' product: Commission is payable at 40% of on first year premiums only and is based on gross' +
                                 ' policyholder premiums (inclusive of statutory levies).'}
                         </MKTypography>

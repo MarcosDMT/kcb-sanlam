@@ -26,7 +26,7 @@ class UtilsApi {
             })
         })
     }
-    fetchBranches(bankID){
+    fetchBranches(){
         return new Promise((resolve, reject) => {
             axiosInstance.get(APP_API_URL.GET_BANK_BRANCHES).then( res => {
                 resolve(res.data);
@@ -54,10 +54,10 @@ class UtilsApi {
     }
     fetchComputeRates(values){
         const data = {
-            productId: values.productId,
-            sumassured: parseFloat(values.sumAssured),
+            productenum: values.productId,
+            sumAssurred: parseFloat(values.sumAssured),
             termId: parseFloat(values.termId),
-            age:  parseFloat(values.age),
+            // age:  parseFloat(values.age),
             frequency : values.frequency?.replace(/ /g,'').toLowerCase(),
         }
         return new Promise((resolve, reject) => {

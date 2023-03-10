@@ -11,8 +11,13 @@ export const config = {
 export default async function handler(req, res) {
     if (req.method === API_METHODS.POST) {
         const body = req.body;
+        const config = {
+            params: {
+                productenum: body?.productId
+            }
+        }
         try {
-            await backendAxiosInstance.post(API_URL.GET_BANK_TERMS+'/'+body?.productId).then(response => {
+            await backendAxiosInstance.post(API_URL.GET_BANK_TERMS, {}, config).then(response => {
                 res.status(response.status).json(response.data);
             }).catch(e => res.status(e.response?.status).json(e.response?.data))
 

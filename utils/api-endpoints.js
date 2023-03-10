@@ -14,10 +14,10 @@ export const API_URL = {
     VERIFY_AGENT: '/api/agents/verifyagent',
 
     //-----------------------Utils------------------------//
-    GET_BANK_BRANCHES: '/api/postdata/getbranches',
+    GET_BANK_BRANCHES: '/api/digitalproducts/getkcbbranch',
     GET_BANKS: '//api/postdata/getbanks',
-    GET_BANK_TERMS: '/api/postdata/getterms',
-    GET_RATES: '/api/postdata/calculaterates',
+    GET_BANK_TERMS: '/api/digitalproducts/getflexterms',
+    GET_RATES: '/api/digitalproducts/getrates',
     POST_CONTACT_DETAILS: '/api/postdata/createnewcustomer'
 }
 

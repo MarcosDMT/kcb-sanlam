@@ -132,9 +132,10 @@ const EducarePlusSection = () => {
                                           responsesDetails,
                                           handleOnReferralSave,
                                           resetValues:resetData,
-                                          minPremium: 20000,
-                                          product: "EduCare Plus",
-                                          productId: 3,
+                                          minPremium: 300000,
+                                          maxPremium: 20000000,
+                                          product: "FlexiSaver Plus",
+                                          productId: 'flexsaverplus',
                                       }}/>
                                 )}
                             </MKBox>

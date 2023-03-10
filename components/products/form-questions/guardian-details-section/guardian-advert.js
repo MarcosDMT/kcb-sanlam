@@ -14,7 +14,7 @@ const GuardianAdvert = () => {
                 height={200}
                 //placeholder={'blur'}
             />
-            <MKTypography variant={'h3'} color={'primary'}>Secure your family and friends today.</MKTypography>
+            <MKTypography variant={'h3'} color={'secondary'}>Secure your family and friends today.</MKTypography>
         </>
     )
 }

@@ -28,8 +28,8 @@ export const {
     fetchTerms,
 } = utilsSlice.actions;
 
-export const fetchBankBranches = (bankID) => async  dispatch => {
-    const data = await utilsApi.fetchBranches(bankID);
+export const fetchBankBranches = () => async  dispatch => {
+    const data = await utilsApi.fetchBranches();
     dispatch(fetchBranches(data))
 }
 export const fetchAllBanks = () => async  dispatch => {

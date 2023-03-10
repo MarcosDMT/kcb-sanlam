@@ -39,7 +39,7 @@ export const paymentDeclaration = [
     },
     {
         id: 7,
-        name: "In addition, I/We acknowledge that Standard Chartered Bank will make double debits on my/our account in order to recover " +
+        name: "In addition, I/We acknowledge that Kenya Commercial Bank will make double debits on my/our account in order to recover " +
             "missed premiums within the 90 day grace period given for delayed premium payment"
     }
 ];
@@ -94,7 +94,7 @@ export const disclaimer = [
     },
     {
         id: 3,
-        name:  "Standard Chartered Bank Insurance Agency Limited (SCIAL) acts only as a distributor and not the contracting party to the policy and all queries should be\n" +
+        name:  "Kenya Commercial Bank Insurance Agency Limited (SCIAL) acts only as a distributor and not the contracting party to the policy and all queries should be\n" +
             "directed to Sanlam Life." ,
     },
 ]

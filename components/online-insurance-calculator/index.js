@@ -49,22 +49,25 @@ function calculateValue(value) {
 const currency = 'Kes ';
 const productsOptions = [
     {
+        id: 1,
+        value: 'flexeducatorplus',
+        name: 'FlexiEducator Plus',
+        maxPremium: 20000000,
+        minPremium: 300000,
+    },
+    {
         id: 2,
-        name: 'EduCare',
-        maxAmount: 20000,
-        minAmount: 0,
+        value: 'flexsaverplus',
+        name: 'FlexiSaver Plus',
+        maxPremium: 20000000,
+        minPremium: 300000,
     },
     {
         id: 3,
-        name: 'EduCare Plus',
-        maxAmount: null,
-        minAmount: 20000,
-    },
-    {
-        id: 1,
-        name: 'Super Endowment Plus',
-        maxAmount: null,
-        minAmount: 15000
+        value: 'flexsaverplus',
+        name: 'Sanlam Fadhili',
+        maxPremium: 20000000,
+        minPremium: 300000
     },
 ];
 
@@ -94,18 +97,25 @@ const OnlineInsuranceCalculator = props => {
             age: '',
         },
         validationSchema: Yup.object({
-            sumAssured: Yup.number().required('Sum Assured is required!'),
+            sumAssured: Yup.number().required("Sum Assured is required")
+            .min(activeProduct.minPremium, `Sum Assurred must be greater or equal to ${activeProduct.minPremium}`)
+            .max(
+              activeProduct.maxPremium ?? 1000000000000,
+              `Sum Assured must not exceed ${activeProduct.maxPremium ?? 1000000000000}`
+            ),
             dob: Yup.string().required('Enter date of birth'),
             term: Yup.number().required('Please select term'),
             frequency: Yup.string().required('Please select frequency')
         }),
         onSubmit: async (values, helpers) => {
+    
+           
             const data = {
                 sumAssured: values.sumAssured,
                 age: values.age,
                 termId: values.termId,
                 frequency: values.frequency,
-                productId:product,
+                productId: activeProduct.value,
             }
             try{
                 const res = await utilsApi.fetchComputeRates(data)
@@ -138,11 +148,11 @@ const OnlineInsuranceCalculator = props => {
         const getMessage = () => {
             let message = null;
             if (results.totalPremium && activeProduct){
-                if (activeProduct.minAmount && results.totalPremium <= activeProduct.minAmount){
-                    message =  `The Premium amount is below ${activeProduct.minAmount}`;
+                if (activeProduct.minPremium && results.totalPremium <= activeProduct.minPremium){
+                    message =  `The Premium amount is below ${activeProduct.minPremium}`;
                 }
-                if (activeProduct.maxAmount && results.totalPremium > activeProduct.maxAmount){
-                    message =  `The Premium amount cannot exceed ${activeProduct.maxAmount}`;
+                if (activeProduct.maxPremium && results.totalPremium > activeProduct.maxPremium){
+                    message =  `The Premium amount cannot exceed ${activeProduct.maxPremium}`;
                 }
             }
             return message;
@@ -155,7 +165,7 @@ const OnlineInsuranceCalculator = props => {
         }
         return (
             <>
-                <Alert severity="error">{message}</Alert>
+                {/* <Alert severity="error">{message}</Alert> */}
             </>
         )
     }
@@ -315,7 +325,7 @@ const OnlineInsuranceCalculator = props => {
                                                                     },
                                                                     fullWidth: true,
                                                                     label:'',
-                                                                    productId:product,
+                                                                    productId: activeProduct.value,
                                                                     value: formik.values.term,
                                                                     required: true,
                                                                     name: 'term',

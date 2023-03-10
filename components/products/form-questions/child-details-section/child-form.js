@@ -139,7 +139,7 @@ const ChildForm = props => {
                     </MKBox>
                     <MKBox sx={{ display: 'flex', mt: 3, justifyContent: 'flex-end'}}>
                         <MKButton color={'error'} onClick={e => {onDelete()}} disabled={formik.isSubmitting}>Cancel</MKButton>
-                        <MKButton  sx={{ml:1}} color={'success'} type={'submit'} disabled={formik.isSubmitting}>Save and Proceed</MKButton>
+                        <MKButton  sx={{ml:1}} color={'secondary'} type={'submit'} disabled={formik.isSubmitting}>Save and Proceed</MKButton>
                     </MKBox>
                 </form>
             </MKBox>

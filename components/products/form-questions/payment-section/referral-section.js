@@ -17,6 +17,7 @@ import CommissionSection from "./commission-section";
 import {Save} from "@mui/icons-material";
 import {LoadingButton} from "@mui/lab";
 import {e} from "../../../../utils/helper-functions";
+import MKButton from "../../../@mui-components/button";
 
 const ReferralSection = props => {
     const {
@@ -72,7 +73,7 @@ const ReferralSection = props => {
                         <Grid container spacing={2}>
 
                             <Grid item xs={12} md={12}>
-                                <MKTypography sx={{ mt: 2}} variant={'h4'} color={'primary'}>Relationship Manager</MKTypography>
+                                <MKTypography sx={{ mt: 2}} variant={'h4'} color={'secondary'}>Relationship Manager</MKTypography>
                             </Grid>
                             <Grid item xs={12} sm={12} md={6}>
                                 <DMTTextInput
@@ -144,15 +145,15 @@ const ReferralSection = props => {
                         <CommissionSection product={product}/>
                     </Grid>
                     <Grid item xs={12} sm={12} md={12}>
-                        <MKTypography variant={'h4'} color={'primary'}>Declaration</MKTypography>
+                        <MKTypography variant={'h4'} color={'secondary'}>Declaration</MKTypography>
                         <PaymentDeclarationSectionTwo/>
                     </Grid>
                     <Grid item xs={12} sm={12} md={12}>
-                        <MKTypography variant={'h4'} color={'primary'}>Disclaimer</MKTypography>
+                        <MKTypography variant={'h4'} color={'secondary'}>Disclaimer</MKTypography>
                         <Disclaimer/>
                     </Grid>
                     <Grid item xs={12} sm={12} md={12}>
-                        <MKTypography variant={'h4'} color={'primary'}>Signature</MKTypography>
+                        <MKTypography variant={'h4'} color={'secondary'}>Signature</MKTypography>
                         <SignatureSection {...{imageURL: formik.values.imageUrl, onChange: value => handleOnChange('imageUrl', value)}}/>
                         <MKTypography color={'error'} variant={'caption'}>{formik.errors.imageUrl}</MKTypography>
                     </Grid>
@@ -160,17 +161,17 @@ const ReferralSection = props => {
 
 
                 <MKBox sx={{ display: 'flex', mt: 3, justifyContent: 'flex-end'}}>
-                    {/*<MKButton  sx={{ml:1}} color={'success'} type={'submit'} >Finish</MKButton>*/}
-                    <LoadingButton
-                        loading={formik.isSubmitting}
-                        loadingPosition="start"
+                    {/*<MKButton  sx={{ml:1}} color={'secondary'} type={'submit'} >Finish</MKButton>*/}
+                    <MKButton
+                        // loading={formik.isSubmitting}
+                        // loadingPosition="start"
                         startIcon={<Save />}
                         variant="contained"
-                        color={'success'}
+                        color={'secondary'}
                         type={'submit'}
                     >
                         Finish
-                    </LoadingButton>
+                    </MKButton>
                 </MKBox>
             </form>
             <DMTAlertModal {...{open: openDialog, onClose: () => setOpenDialog(false), onOk: handleOnOk, product, referenceNo:responsesDetails?.referralInfo?.refNo}}/>

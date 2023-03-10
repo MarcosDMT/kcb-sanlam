@@ -130,9 +130,10 @@ const SuperEndowmentSection = () => {
                                          responsesDetails,
                                          handleOnReferralSave,
                                          resetValues: resetData,
-                                         product: "Super Endowment Plus",
-                                         minPremium: 15000,
-                                         productId: 1,
+                                         product: "Sanlam Fadhili",
+                                         minPremium: 300000,
+                                         maxPremium: 20000000,
+                                         productId: 'flexsaverplus',
                                      }}/>
                                 )}
                             </MKBox>

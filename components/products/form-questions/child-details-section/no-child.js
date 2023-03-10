@@ -25,11 +25,11 @@ const NoChild = props => {
                 width={300}
                 height={200}
             />
-            <MKTypography  variant={'h3'} color={'primary'} gutterBottom>Secure your family members</MKTypography>
+            <MKTypography  variant={'h3'} color={'secondary'} gutterBottom>Secure your family members</MKTypography>
             <MKTypography variant={'subtitle1'} gutterBottom>Family and friends are hidden treasures, seek them and enjoy their riches. </MKTypography>
             <MKBox sx={{mt: 2}}>
-                <MKButton color={'primary'} onClick={e => handleAdd()}>Add Child</MKButton>
-                <MKButton color={'primary'} variant={'outlined'} sx={{ ml:2 }} endIcon={<ArrowForward/>} onClick={e => handleSkip()}>Skip</MKButton>
+                <MKButton color={'secondary'} onClick={e => handleAdd()}>Add Child</MKButton>
+                <MKButton color={'secondary'} variant={'outlined'} sx={{ ml:2 }} endIcon={<ArrowForward/>} onClick={e => handleSkip()}>Skip</MKButton>
             </MKBox>
         </MKBox>
     );

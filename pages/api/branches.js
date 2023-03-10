@@ -11,7 +11,7 @@ export const config = {
 export default async function handler(req, res) {
     if (req.method === API_METHODS.GET) {
         try {
-            await backendAxiosInstance.get(API_URL.GET_BANK_BRANCHES).then(response => {
+            await backendAxiosInstance.post(API_URL.GET_BANK_BRANCHES, {}).then(response => {
                 res.status(response.status).json(response.data);
             }).catch(e => res.status(e.response?.status).json(e.response?.data))
 

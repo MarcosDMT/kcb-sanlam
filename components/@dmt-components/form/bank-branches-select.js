@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "../../../store";
 import {fetchBankBranches, fetchBranches} from "../../../slices/utils";
 
 const getValue = (options, value) => {
-    return options?.find(opt => opt.branchName === value) ?? null;
+    return options?.find(opt => opt.name === value) ?? null;
 }
 
 const DMTBankBranches = props => {
@@ -14,22 +14,19 @@ const DMTBankBranches = props => {
     const { branches } = useSelector(({utils}) => utils)
     const handleOnChange = (event, value) => {
         if (value){
-            onChange(value.branchName);
+            onChange(value.name);
         }else{
             onChange('');
         }
     }
 
     const getBankBranches = useCallback(async () => {
-        dispatch(fetchBranches([]))
-        if (bankID){
-            await dispatch(fetchBankBranches(bankID));
-        }
-    },[bankID])
+            await dispatch(fetchBankBranches());
+    },[])
 
     useEffect( () => {
         getBankBranches();
-    },[bankID])
+    },[])
 
     return (
         <>
@@ -38,7 +35,7 @@ const DMTBankBranches = props => {
                 autoHighlight
                 onChange={handleOnChange}
                 value={getValue(branches, value)}
-                getOptionLabel={(option) => option?.branchName}
+                getOptionLabel={(option) => option?.name}
                 renderInput={(params) => (
                     <DMTTextInput
                         {...params}
